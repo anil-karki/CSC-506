@@ -198,3 +198,16 @@ function getPredictedComplexity(structure, operation) {
   };
   return map[structure][operation];
 }
+
+function logPerformance(structure, operation, duration) {
+  const inputSize = getInputSize(structure);
+  const predicted = getPredictedComplexity(structure, operation);
+  const timestamp = new Date().toISOString();
+
+  const row = `${structure},${operation},${predicted},${duration} ms,${inputSize},${timestamp}`;
+  let csvLog = localStorage.getItem("csvLog") || "Structure,Operation,Predicted,Actual,Input Size,Timestamp\n";
+  csvLog += row + "\n";
+  localStorage.setItem("csvLog", csvLog);
+
+  console.log(row);
+}
