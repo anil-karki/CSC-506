@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Structure Learning Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Data Structure Learning Tool</h1>
+  </header>
+
+  <section class="card">
+    <h2>Choose Structure & Action</h2>
+    <div class="controls">
+      <select id="structure-select">
+        <option value="stack">Stack</option>
+        <option value="queue">Queue</option>
+        <option value="linkedlist">Linked List</option>
+      </select>
+      <input type="text" id="value-input" placeholder="Enter value" />
+      <div class="buttons">
+        <button onclick="insert()">Insert</button>
+        <button onclick="remove()">Delete</button>
+        <button onclick="search()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Complexity Prediction</h2>
+    <div id="complexity" class="output-box">Select an operation to see complexity</div>
+  </section>
+
+  <section class="card">
+    <h2>Visualization</h2>
+    <div id="visualization" class="output-box">Structure will appear here</div>
+  </section>
+
+  <footer>
+  <p></p>
+  </footer>
+
+  <script src="complexity.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
